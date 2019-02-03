@@ -8,7 +8,7 @@
   "license": "WTFPL",
   "private": false,
   "scripts": {
-    "start": "node app.js"
+    "start": "node ."
   },
   "dependencies": {
     "express": "^4.16.4"
