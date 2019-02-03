@@ -15,14 +15,18 @@
 
     let playing = false;
     audio.onended = () => playing = false
-    document.addEventListener('click', () => {
+
+    function doTheThing() {
       if (playing) return
       playing = true
       audio.play()
       loli.classList.remove('animate')
       void loli.offsetWidth;
       loli.classList.add('animate')
-    })
+    }
+
+    document.addEventListener('click', doTheThing)
+    document.addEventListener('touchstart', doTheThing)
   </script>
 </body>
 
