@@ -11,6 +11,7 @@
   <img id="loli" src="loli.png">
   <script>
     const audio = new Audio('fucking-nothing.mp3')
+    audio.load()
     const loli = document.getElementById('loli')
 
     let playing = false;
@@ -18,11 +19,13 @@
 
     function doTheThing() {
       if (playing) return
-      playing = true
-      audio.play()
-      loli.classList.remove('animate')
-      void loli.offsetWidth;
-      loli.classList.add('animate')
+
+      audio.play().then(() => {
+        playing = true
+        loli.classList.remove('animate')
+        void loli.offsetWidth
+        loli.classList.add('animate')
+      })
     }
 
     document.addEventListener('click', doTheThing)
